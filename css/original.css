@@ -1,0 +1,313 @@
+:root {
+    --main-text-color: #2E2F42;
+    --secondary-text-color: #434455;
+    --pseudoclass-clr: #404BBF;
+    --logo-btn-clr: #4D5AE5;
+    --main-header-font-weight: 700;
+    --transition-time: 250ms;
+    --transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ----- сброс фильтров и common ----- */
+
+h1,
+h2,
+h3,
+h4,
+p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+ul,
+ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+button {
+    cursor: pointer;
+}
+
+.list {
+    list-style: none;
+}
+
+.link {
+    text-decoration: none;
+    color: inherit;
+    font-style: normal;
+    display: block;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--main-text-color);
+    background-color: #FFFFFF;
+}
+
+.visually-hidden {
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    margin: -1px;
+}
+
+.suptitle {
+    margin-top: 8px;
+}
+
+
+.container {
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media screen and (max-width: 479px) {
+    .container {
+        width: 100vw;
+    }
+}
+
+/* ------ HEADER ----- */
+
+
+.section {
+    padding-top: 96px;
+    padding-bottom: 96px;
+}
+
+
+/* --------- modal window ------ */
+
+.backdrop {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(46, 47, 66, 0.4);
+    opacity: 1;
+    transition: opacity 250ms var(--transition-timing-function);
+}
+
+.backdrop.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal {
+    padding: 72px 24px 24px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 408px;
+    background-color: #FCFCFC;
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 250ms var(--transition-timing-function);
+}
+
+.backdrop.is-hidden .modal {
+    transform: translate(-50%, -50%) scale(0.5);
+}
+
+.modal-close-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #E7E9FC;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+
+    position: absolute;
+    right: 24px;
+    top: 24px;
+    padding: 0;
+
+    transition: background-color var(--transition-time) var(--transition-timing-function);
+
+}
+
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+    background-color: #404BBF;
+    border: none;
+}
+
+.close-button-click {
+    fill: #000000;
+
+    transition: fill var(--transition-time) var(--transition-timing-function);
+}
+
+.modal-close-btn:hover .close-button-click,
+.modal-close-btn:focus .close-button-click {
+    fill: #FFFFFF;
+}
+
+/* ----- MODAL ----- */
+
+.modal-header {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #2E2F42;
+    text-align: center;
+    letter-spacing: 0.02em;
+    margin-bottom: 16px;
+}
+
+.modal-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-form-input {
+    width: 100%;
+    height: 40px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    padding-left: 38px;
+
+    transition: border-color var(--transition-time) var(--transition-timing-function);
+
+}
+
+.modal-form-input-desc {
+    display: block;
+    font-size: 12px;
+    line-height: 1.33;
+    letter-spacing: 0.04em;
+    color: #8E8F99;
+    margin-bottom: 8px;
+}
+
+.modal-form-field {
+    margin-bottom: 8px;
+}
+
+.modal-form-icon {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    left: 16px;
+    transition: fill var(--transition-time) var(--transition-timing-function), filter var(--transition-time) var(--transition-timing-function);
+    ;
+}
+
+.modal-form-input-wrap {
+    display: block;
+    position: relative;
+}
+
+.modal-form-input:focus {
+    outline: none;
+    border-color: #4D5AE5;
+}
+
+.modal-form-input:focus+.modal-form-icon {
+    fill: #4D5AE5;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.modal-form-message {
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    width: 100%;
+    height: 120px;
+    padding: 8px 16px;
+    resize: none;
+
+    transition: border-color var(--transition-time) var(--transition-timing-function);
+}
+
+.modal-form-message:focus {
+    outline: none;
+    border-color: #4D5AE5;
+}
+
+.modal-form-message::placeholder {
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.04em;
+    color: rgba(117, 117, 117, 0.5);
+}
+
+.modal-form-check-desc::before {
+    display: block;
+    content: " ";
+    width: 16px;
+    height: 16px;
+    border: 1.25px solid #2E2F42;
+    border-radius: 2px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.modal-form-check:checked+.modal-form-check-desc::before {
+    background-color: #404BBF;
+    border-color: #404BBF;
+    background-image: url(../images/check.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.modal-form-check:focus+.modal-form-check-desc::before {
+    border-color: #4D5AE5;
+}
+
+.modal-form-check-desc {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    line-height: 1.33;
+    letter-spacing: 0.04em;
+    color: #757575;
+    margin-bottom: 24px;
+}
+
+.modal-form-submit {
+    min-width: 169px;
+    padding: 16px 32px;
+    align-self: center;
+    font-family: 'Roboto';
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    color: #FFFFFF;
+    background-color: var(--logo-btn-clr);
+    border: none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+
+    transition: background-color var(--transition-time) var(--transition-timing-function);
+}
+
+.modal-form-submit:hover,
+.modal-form-submit:focus {
+    background-color: var(--pseudoclass-clr);
+}
+
+
