@@ -21,6 +21,13 @@
 .contact-info-item {
     display: flex;  
     flex-direction: column;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.33;
+    letter-spacing: 0.04em;
+    color: #434455;
 
 }
 
@@ -69,7 +76,7 @@
     color: var(--pseudoclass-clr);
 }
 
-.contact-info-item {
+/* .contact-info-item {
     display: flex;
     font-family: 'Roboto';
     font-weight: 400;
@@ -77,7 +84,7 @@
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: var(--secondary-text-color);
-}
+} */
 
 
 
