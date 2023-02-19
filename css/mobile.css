@@ -125,9 +125,9 @@ line-height: 0;
 
 .mobile-menu {
     position: fixed;
-    overflow: scroll;
     width: 100vw;
     height: 100vh;
+    
     top:0;
     left:0;
     z-index: 1000;
@@ -145,7 +145,7 @@ line-height: 0;
     visibility: hidden;
     pointer-events: none;
     }
-    
+
     .mobile-menu.is-open {
         opacity: 1;
         visibility: visible;
@@ -181,11 +181,11 @@ line-height: 0;
             margin-bottom: 40px;
         }
 
-                .social-list-mobile {
-                    display: flex;
-                    justify-content: space-between;
-                    column-gap: 56px;
-                }
+        .social-list-mobile {
+                display: flex;
+                justify-content: space-around;
+                column-gap: calc((100% - 56px) / 4);
+        }   
         
                 .social-list-link-mobile {
                     display: flex;
@@ -227,7 +227,6 @@ line-height: 0;
 
 @media screen and (max-width: 767px) {
 .modal {
-    overflow-y: scroll;
     padding: 72px 24px 24px;
     position: absolute;
     top: 50%;
